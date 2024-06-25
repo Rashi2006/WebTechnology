@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bubble Sort</title>
+</head>
+<body>
+    <script>
+         let n=prompt("Enter the size of an array:");
+         let arr=[];
+         for(i=0; i<n; i++){
+            arr[i]=prompt("Enter arr"+i+"]=");
+         }
+         let swap;
+         for(i=0;i<n;i++){
+            for(j=0;j<n-i-1;j++){
+                if(arr[j]>arr[j+1]){
+                    swap=arr[j];
+                    arr[j]=arr[j+1];
+                    arr[j+1]=swap;
+                }
+            }
+         }
+         document.write(arr);
+    </script>
+
+</body>
+</html>

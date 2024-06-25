@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NumberToWords</title>
+</head>
+<body>
+    <script>
+        a=parseInt(prompt("ENter the number between 0 to 999"));
+        if(a>999 || a<0){
+            alert("Out Of Range");
+        }else if(isNaN(a)){
+            alert("NotANumber");
+        }
+        let result;
+        let unit=["zero","one","two","three","four","five","six","seven","eight","nine"];
+        let teens=["ten","eleven","twelve","thirteen","fourteen","fifteen","sixteen","seventeen","eighteen","nineteen"];
+        let tens = ["twenty","thirty","fourty","fifty","sixty","seventy","eightty","ninety"];
+        if(a>=100 && a<=999){
+          result=unit[Math.floor(a/100)]+"hundread";
+          a=a%100;
+        }
+        if(a>=20 && a<=99){
+          result=result+" "+tens[Math.floor(a/10)-2];
+          a=a%10;
+        }else if(a>=10 && a<=19){
+            result=result+" "+teens[a-10];
+            a=a%10;
+        }
+        if(a>=0 && a<10){
+            result=result+" "+unit[a];
+        }
+        document.write(result);
+    </script>
+</body>
+</html>

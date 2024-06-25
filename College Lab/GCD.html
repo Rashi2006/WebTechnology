@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GCD</title>
+</head>
+<body>
+    <script>
+        a=parseInt(prompt("ENter a:"));
+        b=parseInt(prompt("ENter b:"));
+        
+        pro=1;
+        for(i=1;i<=a && i<=b;i++){
+            if(a%i==0 && b%i==0){
+                pro=i;
+                document.write(i);
+            }
+        }
+        alert(pro);
+        
+    </script>
+</body>
+</html>

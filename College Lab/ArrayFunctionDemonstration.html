@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ArrayFunctionDemonstration</title>
+</head>
+<body>
+    <script>
+         let n=prompt("Enter the size of an array:");
+         let arr=[];
+         for(i=0; i<n; i++){
+            arr[i]=prompt("Enter arr"+i+"]=");
+         }
+         document.write("original:"+arr);
+         document.write("<br>");
+          arr.sort((A,B) => A - B)
+        
+         document.write("after sort:"+arr);
+         arr.push(prompt("Enter element to add in an array:"));
+         document.write("<br>");
+
+         document.write("after push:"+arr);
+         document.write("<br>");
+
+         arr.pop();
+         document.write("after pop:"+arr);
+         document.write("<br>");
+
+         arr.shift();
+         document.write("after shift:"+arr);
+         document.write("<br>");
+
+         arr.unshift(prompt("Enter element to add in an array:"));
+         document.write("after unshift:"+arr);
+         document.write("<br>");
+
+         arr.splice(2,4);
+         document.write("after splice:"+arr);
+         document.write("<br>");
+
+        
+
+    </script>
+</body>
+</html>

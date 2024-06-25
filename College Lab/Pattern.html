@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pattern1</title>
+</head>
+
+<body>
+    <script>
+
+        for (i = 0; i < 5; i++) {
+            for (k = 0; k <= i; k++) {
+                document.write("*");
+            }
+            document.write("<br>");
+        }
+        document.write("<br>");
+
+        for (i = 0; i < 5; i++) {
+            for (j = 5; i <=(j - 1); j--) {
+                document.write("&nbsp;&nbsp");
+            }
+            for (k = 0; k <= i; k++) {
+                document.write("*");
+            }
+            document.write("<br>");
+        }
+        document.write("<br>");
+
+        for (i = 0; i < 5; i++) {
+            for (j = 5; j > i; j--) {
+                document.write("&nbsp;");
+            }
+            for (k = 0; k <= i; k++) {
+                document.write("*");
+            }
+            document.write("<br>");
+        }
+        document.write("<br>");
+
+       for(i=0;i<=5;i++){
+        for(j=0;j<=5;j++){
+            if(j==0 || j==5 || i==0 || i==5){
+                document.write("*");
+            }else{
+                document.write("&nbsp;&nbsp");
+            }
+        }
+        document.write("<br>");
+       }
+       document.write("<br>");
+       
+       k=1;
+       for(i=0;i<=2;i++){
+        for(j=0;j<=i;j++){
+            document.write(k+"&nbsp");
+            k++;
+        } 
+        document.write("<br>");
+       }
+       document.write("<br>");
+    </script>
+</body>
+
+</html>

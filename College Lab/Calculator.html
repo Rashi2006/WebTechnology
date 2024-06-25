@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+</head>
+<body>
+    <script>
+        a=prompt("Enter the value of a");
+        b=prompt("Enter the value of b");
+        c=prompt("Enter the sign");
+    
+        switch(c){
+            case '+' : alert(parseInt(a)+parseInt(b));
+                       break;
+            case '-' : alert(parseInt(a)-parseInt(b));
+                       break;
+            case '*' : alert(parseInt(a)*parseInt(b));
+                       break;
+            case '/' : alert(parseInt(a)/parseInt(b));
+                       break;
+            case '%' : alert(parseInt(a)%parseInt(b));
+                       break;
+            default  : alert("Invalid sign");
+        }
+    </script>
+</body>
+</html>

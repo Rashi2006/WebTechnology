@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Graphical Calculator</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: rgb(22, 21, 21);
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        #box{
+            box-shadow: 0px 0px 8px rgb(73, 110, 115);
+        }
+        #outputBox {
+            border: 1px solid black;
+            width: 340px;
+            display: flex;
+            justify-content: center;
+            background-color: black;
+            padding-top: 4px;
+        }
+
+        #inputText {
+            width: 330px;
+            height: 35px;
+            border-radius: 0%;
+            font-size: 20px;
+            font-weight: bold;
+            border: 1px solid whitesmoke
+        }
+
+        #inputText:hover {
+            background-color: rgb(203, 194, 194);
+            box-shadow: 0px 0px 5px whitesmoke;
+            border: 1px solid whitesmoke;
+        }
+
+        #inputBox {
+            border: 1px solid black;
+            background-color: black;
+            width: 340px;
+            height: 300px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+        }
+
+        .ib {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+        }
+
+        .buttons {
+            width: 80px;
+            height: 35px;
+            font-size: 20px;
+            font-weight: bold;
+            text-align: center;
+            border-radius: 0%;
+            border: 1px solid whitesmoke;
+        }
+
+        .buttons:hover {
+            background-color: rgb(92, 90, 90);
+            box-shadow: 0px 0px 5px whitesmoke;
+            border: 1px solid whitesmoke;
+        }
+
+        .buttons:active {
+            background-color: rgb(181, 204, 213);
+            box-shadow: 0px 0px 5px whitesmoke;
+            border: 1px solid whitesmoke;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <form>
+            <div id="box">
+                <div id="outputBox">
+                    <input type="text" id="inputText" name="inputText">
+                </div>
+                <div id="inputBox">
+                    <div id="inputBox1" class="ib">
+                        <input type="button" value="AC" id="AC" class="buttons" onclick="inputText.value=''">
+                        <input type="button" value="X" id="C" class="buttons" onclick="deletee()">
+                        <input type="button" value="%" id="mod" class="buttons" onclick="inputText.value+='%'">
+                        <input type="button" value="/" id="divide" class="buttons" onclick="inputText.value+='/'">
+                    </div>
+                    <div id="inputBox2" class="ib">
+                        <input type="button" value="1" id="1" class="buttons" onclick="inputText.value+='1'">
+                        <input type="button" value="2" id="2" class="buttons" onclick="inputText.value+='2'">
+                        <input type="button" value="3" id="3" class="buttons" onclick="inputText.value+='3'">
+                        <input type="button" value="+" id="add" class="buttons" onclick="inputText.value+='+'">
+                    </div>
+                    <div id="inputBox3" class="ib">
+                        <input type="button" value="4" id="4" class="buttons" onclick="inputText.value+='4'">
+                        <input type="button" value="5" id="5" class="buttons" onclick="inputText.value+='5'">
+                        <input type="button" value="6" id="6" class="buttons" onclick="inputText.value+='6'">
+                        <input type="button" value="-" id="subtract" class="buttons" onclick="inputText.value+='-'">
+                    </div>
+                    <div id="inputBox4" class="ib">
+                        <input type="button" value="7" id="7" class="buttons" onclick="inputText.value+='7'">
+                        <input type="button" value="8" id="8" class="buttons" onclick="inputText.value+='8'">
+                        <input type="button" value="9" id="9" class="buttons" onclick="inputText.value+='9'">
+                        <input type="button" value="*" id="multiply" class="buttons" onclick="inputText.value+='*'">
+                    </div>
+                    <div id="inputBox5" class="ib">
+                        <input type="button" value="00" id="00" class="buttons" onclick="inputText.value+='00'">
+                        <input type="button" value="0" id="0" class="buttons" onclick="inputText.value+='0'">
+                        <input type="button" value="." id="." class="buttons" onclick="inputText.value+='.'">
+                        <input type="button" value="=" id="=" class="buttons" onclick="check()">
+                    </div>
+                </div>
+            </div>
+        </form>
+        <script>
+            function deletee() {
+                input = document.getElementById("inputText").value;
+                input = input.substring(0, input.length - 1);
+                inputText.value = input;
+            }
+            function check() {
+                let a = document.getElementById("inputText").value;
+                let arr = a.split(/(\+|\-|\/|\%|\*)/);
+                let ans = 0;
+                for (let i = 0; i < arr.length; i++) {
+                    if (arr[i] == '+') {
+                        ans = (parseFloat(arr[i - 1]) + parseFloat(arr[i + 1]));
+                        arr[i + 1] = ans;
+                    } else if (arr[i] == '-') {
+                        ans = (parseFloat(arr[i - 1]) - parseFloat(arr[i + 1]));
+                        arr[i + 1] = ans;
+                    } else if (arr[i] == '*') {
+                        arr[i + 1] = (parseFloat(arr[i - 1]) * parseFloat(arr[i + 1]));
+                    } else if (arr[i] == '/') {
+                        arr[i + 1] = (parseFloat(arr[i - 1]) / parseFloat(arr[i + 1]));
+                    } else if (arr[i] == '%') {
+                        arr[i + 1] = (parseFloat(arr[i - 1]) % parseFloat(arr[i + 1]));
+                    }
+                }
+
+                inputText.value = arr[arr.length - 1];
+            }
+        </script>
+    </div>
+</body>
+
+</html>

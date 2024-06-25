@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MaxNumber</title>
+</head>
+<body>
+    <script>
+         let n=prompt("Enter the size of an array:");
+         let arr=[];
+         for(i=0; i<n; i++){
+            arr[i]=prompt("Enter arr"+i+"]=");
+         }
+         let max=arr[0];
+         for(i=1;i<n;i++){
+            if(max<arr[i]){
+                max=arr[i];
+            }
+         }
+         alert("Max number is "+max);
+    </script>
+   
+</body>
+</html>

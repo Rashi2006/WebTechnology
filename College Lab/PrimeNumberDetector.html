@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PrimeNumberDetector</title>
+</head>
+<body>
+    <script>
+        a=prompt("Enter the number:");
+        isPrime=true;
+        for(i=2;i<Math.sqrt(a);i++){
+            if(a%i==0){
+                alert("Not a Prime Number");
+                isPrime=false;
+                break;
+            }
+        }
+        if(isPrime){
+            alert("Prime Number");
+        }
+    </script>
+</body>
+</html>

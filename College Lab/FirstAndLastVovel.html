@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>First and Last Occurence Of Vovel</title>
+</head>
+<body>
+    <script>
+        a=prompt("Enter the string");
+
+        first=a.indexOf("a");
+        last=a.lastIndexOf("a")
+        let count=0;
+        for(i=0;i<a.length;i++){
+            if(a.charAt(i)=='a'){
+                count++;
+            }
+        }
+        if(count!=0){
+            alert(a.substring(first+1, last));
+        }else{
+            alert("String does not contain a");
+        }
+        
+    </script>
+</body>
+</html>
