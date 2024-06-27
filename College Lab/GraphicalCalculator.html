@@ -94,38 +94,57 @@
                 <div id="inputBox">
                     <div id="inputBox1" class="ib">
                         <input type="button" value="AC" id="AC" class="buttons" onclick="inputText.value=''">
-                        <input type="button" value="X" id="C" class="buttons" onclick="deletee()">
+                        <input type="button" value="C" id="C" class="buttons" onclick="inputText.value=''">
+                        <input type="button" value="X" id="delete" class="buttons" onclick="deletee()">
+
                         <input type="button" value="%" id="mod" class="buttons" onclick="inputText.value+='%'">
-                        <input type="button" value="/" id="divide" class="buttons" onclick="inputText.value+='/'">
                     </div>
                     <div id="inputBox2" class="ib">
                         <input type="button" value="1" id="1" class="buttons" onclick="inputText.value+='1'">
                         <input type="button" value="2" id="2" class="buttons" onclick="inputText.value+='2'">
                         <input type="button" value="3" id="3" class="buttons" onclick="inputText.value+='3'">
-                        <input type="button" value="+" id="add" class="buttons" onclick="inputText.value+='+'">
+                        <input type="button" value="/" id="divide" class="buttons" onclick="inputText.value+='/'">
                     </div>
                     <div id="inputBox3" class="ib">
                         <input type="button" value="4" id="4" class="buttons" onclick="inputText.value+='4'">
                         <input type="button" value="5" id="5" class="buttons" onclick="inputText.value+='5'">
                         <input type="button" value="6" id="6" class="buttons" onclick="inputText.value+='6'">
-                        <input type="button" value="-" id="subtract" class="buttons" onclick="inputText.value+='-'">
+                        <input type="button" value="+" id="add" class="buttons" onclick="inputText.value+='+'">
                     </div>
                     <div id="inputBox4" class="ib">
                         <input type="button" value="7" id="7" class="buttons" onclick="inputText.value+='7'">
                         <input type="button" value="8" id="8" class="buttons" onclick="inputText.value+='8'">
                         <input type="button" value="9" id="9" class="buttons" onclick="inputText.value+='9'">
-                        <input type="button" value="*" id="multiply" class="buttons" onclick="inputText.value+='*'">
+                        <input type="button" value="-" id="subtract" class="buttons" onclick="inputText.value+='-'">
                     </div>
                     <div id="inputBox5" class="ib">
                         <input type="button" value="00" id="00" class="buttons" onclick="inputText.value+='00'">
                         <input type="button" value="0" id="0" class="buttons" onclick="inputText.value+='0'">
                         <input type="button" value="." id="." class="buttons" onclick="inputText.value+='.'">
+                        <input type="button" value="*" id="multiply" class="buttons" onclick="inputText.value+='*'">
+                    </div>
+                    <div id="inputBox6" class="ib">
+                        <input type="button" value="1/x" id="1/x" class="buttons" onclick="oneDivideX()">
+                        <input type="button" value="x&#178;" id="square" class="buttons" onclick="squaree()">
+                        <input type="button" value="√x" id="root" class="buttons" onclick="squareRoot()">
                         <input type="button" value="=" id="=" class="buttons" onclick="check()">
                     </div>
                 </div>
             </div>
         </form>
         <script>
+            function squareRoot(){
+                 x=document.getElementById("inputText").value;
+                 inputText.value = Math.sqrt(x);
+            }
+            function squaree(){
+                x=document.getElementById("inputText").value;
+                inputText.value=(x*x);
+            }
+            function oneDivideX(){
+                 x=document.getElementById("inputText").value;
+                 inputText.value = 1/x;
+            }
             function deletee() {
                 input = document.getElementById("inputText").value;
                 input = input.substring(0, input.length - 1);

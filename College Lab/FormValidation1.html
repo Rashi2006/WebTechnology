@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Validation</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .main {
+            width: 50%;
+            border: 2px solid black;
+            padding: 20px;
+        }
+
+        .error {
+            color: red;
+            font-size: 0.875em;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main">
+        <form id="myForm">
+            <div class="row mb-3">
+                <label class="col-md-12 col-2">Name</label>
+                <div class="col-md-12 col-10">
+                    <input type="text" class="form-control" id="inputName" required>
+                    <div id="nameError" class="error"></div>
+                </div>
+            </div>
+            <div class="row mb-3">
+                <label class="col-md-12 col-2">Password</label>
+                <div class="col-md-12 col-10">
+                    <input type="password" class="form-control" id="inputPassword3" required>
+                    <div id="pwError" class="error"></div>
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <label class="col-md-12 col-2">Confirm Password</label>
+                <div class="col-md-12 col-10">
+                    <input type="password" class="form-control" id="inputConfirmPassword" required>
+                    <div id="cpwError" class="error"></div>
+                </div>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Email address</label>
+                <input type="email" class="form-control" id="emailFormControlInput1" placeholder="name@example.com" required>
+                <div id="emailError" class="error"></div>
+            </div>
+            <div class="row mb-3">
+                <label class="col-md-12 col-2">Date of Birth</label>
+                <div class="col-md-12 col-10">
+                    <input type="date" class="form-control" id="inputDOB" >
+                </div>
+            </div>
+            <button type="submit" class="btn btn-primary">Sign in</button>
+        </form>
+    </div>
+    <script>
+        document.getElementById('myForm').addEventListener('submit', function (event) {
+            event.preventDefault();
+            let nameInput = document.getElementById('inputName').value;
+            let nameError = document.getElementById('nameError');
+
+            if (nameInput.length < 8) {
+                nameError.textContent = 'Name must be at least 8 characters long';
+            } else {
+                nameError.textContent = '';
+                // Continue with other validations or form submission
+                // document.getElementById('myForm').submit();
+                // alert("name done");
+            }
+            //PASSWORD
+            let passwordInput = document.getElementById('inputPassword3').value;
+            let pwError = document.getElementById('pwError');
+
+            var pattern = /^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*\W)(?!.* ).{8,16}$/;
+            var regex = new RegExp(pattern);
+            if (!regex.test(passwordInput)) {
+                pwError.textContent = 'Password must contain at least 8 characters, including at least one uppercase letter, one lowercase letter, one digit, and one special character';
+            } else {
+                pwError.textContent = '';
+                // alert("p done");
+            }
+           
+            //CONFIRM PW
+            let confirmPasswordInput = document.getElementById('inputConfirmPassword').value;
+            let cpwError = document.getElementById('cpwError');
+
+            if(passwordInput==confirmPasswordInput && regex.test(passwordInput)){
+                cpwError.textContent = '';
+                // alert("cp done");
+            }else{
+                cpwError.textContent = 'Passwords do not match';
+            }
+
+            //EMAIL
+            let emailInput = document.getElementById('emailFormControlInput1').value;
+            let emailError = document.getElementById('emailError');
+
+            var emailPattern = /^[\w.-]+@[\w.-]+\.[A-Za-z]{2,6}$/;
+            var emailRegex = new RegExp(emailPattern);
+            if (!emailRegex.test(emailInput)) {
+                emailError.textContent = 'Invalid email address';
+            } else {
+                emailError.textContent = '';
+                // alert("email done");
+            }
+        })
+    </script>
+</body>
+
+</html>
