@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mouse </title>
+    <style>
+        body{
+            height: 100vh;
+            background-color: lightgray;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        div{
+            width: 250px;
+            height: 250px;
+            background-color: purple;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+    <div id="div">
+        Rashi
+    </div>
+    <script>
+        let a=document.getElementById("div");
+        function display(b) {
+           if(b=='1'){
+             a.style.backgroundColor="red";
+           }else if(b=='2'){
+             a.style.backgroundColor="blue";
+           }else if(b=='3'){
+             a.style.backgroundColor="yellow";
+           }else if(b=='4'){
+             a.style.backgroundColor=" green";
+           }else if(b=='5'){
+             a.style.backgroundColor="white";
+           }else if(b=='6'){
+             a.style.backgroundColor="black";
+           }
+        }
+        
+        a.addEventListener('mousemove',()=> display('1'));
+        a.addEventListener('mouseout',()=> display('2'));
+        a.addEventListener('mousedown',()=> display('3'));
+        a.addEventListener('click',()=> display('4'));
+        a.addEventListener('dblclick',()=> display('5'));
+        a.addEventListener('mouseover',()=> display('6'));
+    </script>
+</body>
+</html>

@@ -23,12 +23,11 @@
         #outputBox {
             border: 1px solid black;
             width: 340px;
-            height: 70px;
+            height: 90px;
             padding: 5px;
             border: 1px solid rgb(43, 42, 39);
             display: flex;
             justify-content: center;
-           
             align-items: center;
             background-color: black;
             padding-top: 4px;
@@ -36,9 +35,9 @@
 
         #inputText {
             width: 330px;
-            height: 50px;
+            height: 70px;
             border-radius: 0%;
-            font-size: 20px;
+            font-size: 30px;
             font-weight: bold;
             border: 1px solid whitesmoke
         }
@@ -53,7 +52,7 @@
             border: 1px solid black;
             background-color: black;
             width: 340px;
-            height: 300px;
+            height: 320px;
             display: flex;
             flex-direction: column;
             justify-content: space-around;
@@ -66,9 +65,9 @@
         }
 
         .buttons {
-            width: 65px;
-            height: 35px;
-            font-size: 20px;
+            width: 50px;
+            height: 30px;
+            font-size: 15px;
             font-weight: bold;
             text-align: center;
             border-radius: 0%;
@@ -102,38 +101,50 @@
                         <input type="button" value="AC" id="AC" class="buttons" onclick="inputText.value=''">
                         <input type="button" value="C" id="C" class="buttons" onclick="inputText.value=''">
                         <input type="button" value="X" id="delete" class="buttons" onclick="deletee()">
-
+                        <input type="button" value="3" id="3" class="buttons" onclick="inputText.value+='3'">
                         <input type="button" value="%" id="mod" class="buttons" onclick="inputText.value+='%'">
                     </div>
                     <div id="inputBox2" class="ib">
-                        <input type="button" value="1" id="1" class="buttons" onclick="inputText.value+='1'">
-                        <input type="button" value="2" id="2" class="buttons" onclick="inputText.value+='2'">
-                        <input type="button" value="3" id="3" class="buttons" onclick="inputText.value+='3'">
-                        <input type="button" value="/" id="divide" class="buttons" onclick="inputText.value+='/'">
-                    </div>
-                    <div id="inputBox3" class="ib">
-                        <input type="button" value="4" id="4" class="buttons" onclick="inputText.value+='4'">
-                        <input type="button" value="5" id="5" class="buttons" onclick="inputText.value+='5'">
-                        <input type="button" value="6" id="6" class="buttons" onclick="inputText.value+='6'">
-                        <input type="button" value="+" id="add" class="buttons" onclick="inputText.value+='+'">
-                    </div>
-                    <div id="inputBox4" class="ib">
-                        <input type="button" value="7" id="7" class="buttons" onclick="inputText.value+='7'">
-                        <input type="button" value="8" id="8" class="buttons" onclick="inputText.value+='8'">
-                        <input type="button" value="9" id="9" class="buttons" onclick="inputText.value+='9'">
-                        <input type="button" value="-" id="subtract" class="buttons" onclick="inputText.value+='-'">
-                    </div>
-                    <div id="inputBox5" class="ib">
-                        <input type="button" value="00" id="00" class="buttons" onclick="inputText.value+='00'">
-                        <input type="button" value="0" id="0" class="buttons" onclick="inputText.value+='0'">
-                        <input type="button" value="." id="." class="buttons" onclick="inputText.value+='.'">
-                        <input type="button" value="*" id="multiply" class="buttons" onclick="inputText.value+='*'">
-                    </div>
-                    <div id="inputBox6" class="ib">
                         <input type="button" value="1/x" id="1/x" class="buttons" onclick="oneDivideX()">
                         <input type="button" value="x&#178;" id="square" class="buttons" onclick="squaree()">
                         <input type="button" value="√x" id="root" class="buttons" onclick="squareRoot()">
                         <input type="button" value="=" id="=" class="buttons" onclick="check()">
+                        <input type="button" value="3" id="3" class="buttons" onclick="inputText.value+='3'">
+                    </div>
+                    <div id="inputBox3" class="ib">
+                        <input type="button" value="1" id="1" class="buttons" onclick="inputText.value+='1'">
+                        <input type="button" value="2" id="2" class="buttons" onclick="inputText.value+='2'">
+                        <input type="button" value="3" id="3" class="buttons" onclick="inputText.value+='3'">
+                        <input type="button" value="/" id="divide" class="buttons" onclick="inputText.value+='/'">
+                        <input type="button" value="3" id="3" class="buttons" onclick="inputText.value+='3'">
+                    </div>
+                    <div id="inputBox4" class="ib">
+                        <input type="button" value="4" id="4" class="buttons" onclick="inputText.value+='4'">
+                        <input type="button" value="5" id="5" class="buttons" onclick="inputText.value+='5'">
+                        <input type="button" value="6" id="6" class="buttons" onclick="inputText.value+='6'">
+                        <input type="button" value="+" id="add" class="buttons" onclick="inputText.value+='+'">
+                        <input type="button" value="3" id="3" class="buttons" onclick="inputText.value+='3'">
+                    </div>
+                    <div id="inputBox5" class="ib">
+                        <input type="button" value="7" id="7" class="buttons" onclick="inputText.value+='7'">
+                        <input type="button" value="8" id="8" class="buttons" onclick="inputText.value+='8'">
+                        <input type="button" value="9" id="9" class="buttons" onclick="inputText.value+='9'">
+                        <input type="button" value="-" id="subtract" class="buttons" onclick="inputText.value+='-'">
+                        <input type="button" value="3" id="3" class="buttons" onclick="inputText.value+='3'">
+                    </div>
+                    <div id="inputBox6" class="ib">
+                        <input type="button" value="00" id="00" class="buttons" onclick="inputText.value+='00'">
+                        <input type="button" value="0" id="0" class="buttons" onclick="inputText.value+='0'">
+                        <input type="button" value="." id="." class="buttons" onclick="inputText.value+='.'">
+                        <input type="button" value="*" id="multiply" class="buttons" onclick="inputText.value+='*'">
+                        <input type="button" value="3" id="3" class="buttons" onclick="inputText.value+='3'">
+                    </div>
+                    <div id="inputBox7" class="ib">
+                        <input type="button" value="1/x" id="1/x" class="buttons" onclick="oneDivideX()">
+                        <input type="button" value="x&#178;" id="square" class="buttons" onclick="squaree()">
+                        <input type="button" value="√x" id="root" class="buttons" onclick="squareRoot()">
+                        <input type="button" value="=" id="=" class="buttons" onclick="check()">
+                        <input type="button" value="3" id="3" class="buttons" onclick="inputText.value+='3'">
                     </div>
                 </div>
             </div>
