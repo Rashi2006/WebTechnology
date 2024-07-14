@@ -1,0 +1,51 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Identify Vowel</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 50px;
+        }
+
+        #message {
+            font-size: 24px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Press a key to see the magic!</h1>
+    <p id="message"></p>
+
+    <script>
+        document.addEventListener('keydown', function(event) {
+            const vowels = [65, 69, 73, 79, 85]; // Key codes for 'a', 'e', 'i', 'o', 'u'
+            const keyCode = event.keyCode;
+            const messageElement = document.getElementById('message');
+
+            if (vowels.includes(keyCode)) {
+                const vowel = String.fromCharCode(keyCode);
+                messageElement.textContent = `You pressed the vowel: ${vowel}`;
+                speak(`You pressed the vowel: ${vowel}`);
+            } else {
+                messageElement.textContent = `You pressed: ${String.fromCharCode(keyCode)}`;
+            }
+        });
+
+        document.addEventListener('keyup', function() {
+            document.body.style.backgroundColor = 'purple';
+        });
+
+        function speak(text) {
+            const utterance = new SpeechSynthesisUtterance(text);
+            speechSynthesis.speak(utterance);
+        }
+    </script>
+</body>
+
+</html>

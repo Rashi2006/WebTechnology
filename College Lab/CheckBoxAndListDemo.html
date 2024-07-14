@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CheckbocAndListDemo</title>
+    <style>
+
+    </style>
+</head>
+<body>
+    <h1>SelectRoll Numbers</h1>
+    <div>
+        <input type="checkbox" id="r1" value="101" onclick="SelectedValues()">
+        <label for="roll1">101</label><br>
+        <input type="checkbox" id="r2" value="102" onclick="SelectedValues()">
+        <label for="roll1">102</label><br>
+        <input type="checkbox" id="r3" value="103" onclick="SelectedValues()">
+        <label for="roll1">103</label><br>
+        <input type="checkbox" id="r4" value="104" onclick="SelectedValues()">
+        <label for="roll1">104</label><br>
+        <input type="checkbox" id="r5" value="105" onclick="SelectedValues()">
+        <label for="roll1">105</label><br>
+    </div>
+    <!-- <button id="button" onclick="">done</button> -->
+    <h1>Selected Roll Numbers are:</h1>
+    <div id="selectedRollNo">
+
+    </div>
+    <script>
+        function SelectedValues(){
+           const c = document.querySelectorAll('input[type="checkbox"]');
+           let arr=[];
+           c.forEach(checkbox => {
+             if(checkbox.checked){
+                arr.push(checkbox.value);
+             }
+           });
+           document.getElementById('selectedRollNo').innerText = arr.join(', ');
+        }
+        
+    </script>
+</body>
+</html>

@@ -6,16 +6,16 @@
     <title>ChnageHTML</title>
 </head>
 <body>
-    <input type="text" id="dateInput" placeholder="Enter date">
-   <button onclick="check()">hii</button>
+    <input type="text" id="pw" placeholder="Enter password">
+   <button onclick="check()">EYE</button>
     <script>  
   
         function check(){
-           let input=document.getElementById("dateInput");
+           let input=document.getElementById("pw");
             if(input.type=='text'){
-            input.type='date';
-            // type=1;
-        }else if(input.type=='date'){
+            input.type='password';
+           
+        }else if(input.type=='password'){
             input.type='text';
         }
     }

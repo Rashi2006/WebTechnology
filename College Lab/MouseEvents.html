@@ -12,7 +12,16 @@
             justify-content: center;
             align-items: center;
         }
-        div{
+        #ButtonDiv{
+          width: 250px;
+            height: 250px;
+            background-color:rgb(107, 188, 223);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        #div{
             width: 250px;
             height: 250px;
             background-color: purple;
@@ -20,36 +29,91 @@
             justify-content: center;
             align-items: center;
         }
+        #DisplayDate{
+           margin-bottom: 5px;
+           color: antiquewhite;
+           font-weight: bold;
+        }
     </style>
 </head>
 <body>
+  <h1 id="heading">MOUSE EVENTS</h1>
     <div id="div">
         Rashi
     </div>
-    <script>
-        let a=document.getElementById("div");
+    <div id="ButtonDiv">
+      <div id="DisplayDate">
+           
+      </div>
+      <div>
+        <button id="red" onclick="changeRed() ">Red</button>
+      <button id="findTime" onclick="showDateTime() ">Date&TIme</button>
+      <button id="green" onclick="changeGreen()">Green</button>
+      </div>
+      
+    </div>
+  <script>
+      var h=document.getElementById("heading");
+      h.addEventListener('mouseover',()=>{
+        h.style.backgroundColor="yellow";
+      });
+      h.addEventListener('mouseout',()=>{
+        h.style.backgroundColor="black";
+        h.style.color="white";
+      });
+
+       var a=document.getElementById("div");
         function display(b) {
-           if(b=='1'){
+           if(b==1){
              a.style.backgroundColor="red";
-           }else if(b=='2'){
+           }else if(b==2){
              a.style.backgroundColor="blue";
-           }else if(b=='3'){
-             a.style.backgroundColor="yellow";
-           }else if(b=='4'){
+           }else if(b==4){
              a.style.backgroundColor=" green";
-           }else if(b=='5'){
+           }else if(b==5){
              a.style.backgroundColor="white";
-           }else if(b=='6'){
-             a.style.backgroundColor="black";
+           }else if(b==6){
+             a.style.backgroundColor="yellow";
            }
         }
         
-        a.addEventListener('mousemove',()=> display('1'));
-        a.addEventListener('mouseout',()=> display('2'));
-        a.addEventListener('mousedown',()=> display('3'));
-        a.addEventListener('click',()=> display('4'));
-        a.addEventListener('dblclick',()=> display('5'));
-        a.addEventListener('mouseover',()=> display('6'));
+        a.addEventListener('mousemove',()=> display(1));
+        a.addEventListener('mouseout',()=> display(2));
+        a.addEventListener('mousedown',function(event){
+          if(event.button==0){
+           
+            a.textContent="Left Clicked";
+            a.style.backgroundColor="black";
+            a.style.color="white";
+          }else if(event.button==2){
+           
+            a.textContent="Right Clicked";
+            a.style.backgroundColor="black";
+            a.style.color="white";
+          }
+        });
+        a.addEventListener('click',()=> display(4));
+        a.addEventListener('dblclick',()=> display(5));
+        a.addEventListener('mouseover',()=> display(6));
+
+        a.addEventListener('contextmenu', function(event) {
+            event.preventDefault();
+        });
+        
+        function changeRed() {
+          var a=document.getElementsByTagName('body')[0];
+            a.style.backgroundColor="red";
+        }
+        
+        function changeGreen() {
+          var a=document.getElementsByTagName('body')[0];
+            a.style.backgroundColor="green";
+        }
+        function showDateTime() {
+            var d = new Date();
+            var dateTime = d.toLocaleString();
+            document.getElementById("DisplayDate").innerText = dateTime;
+        }
     </script>
 </body>
 </html>

@@ -4,8 +4,69 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title></title>
+    <style>
+       body{
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+       }
+       .Boxes{
+           height: 100px;
+           width: 100px;
+           border: 4px solid rgb(17, 13, 13);
+           display: inline-block;
+       }
+       .box1{
+        display:flex ;
+         justify-content:center;
+       }
+       
+    </style>
 </head>
-<body>
-    
+<body onkeyup="down(event)" onkeydown="up(event)">
+    <div id="main" >
+        <div class="box1">
+            <div class="Boxes" id="up" ></div>
+        </div>
+        <div class="box1">
+            <div class="Boxes" id="left"></div>
+            <div class="Boxes" id="down"></div>
+            <div class="Boxes" id="right"></div>
+        </div>
+    </div>
+    <script>
+        function up(e){
+            console.log(e.key);
+            if(e.key=="ArrowUp"){
+                document.getElementById("up").style.backgroundColor = "blue";
+                console.log("rashi")
+            }else if(e.key=="ArrowDown"){
+                document.getElementById("down").style.backgroundColor = "red";
+                console.log("rashi")
+            }else if(e.key=="ArrowLeft"){
+                document.getElementById("left").style.backgroundColor = "green";
+                console.log("rashi")
+            }else if(e.key=="ArrowRight"){
+                document.getElementById("right").style.backgroundColor = "yellow";
+                console.log("rashi")
+            }
+        }
+        function down(e){
+            if(e.key=="ArrowUp"){
+                document.getElementById("up").style.backgroundColor = "white";
+                console.log("rashi")
+            }else if(e.key=="ArrowDown"){
+                document.getElementById("down").style.backgroundColor = "white";
+                console.log("rashi")
+            }else if(e.key=="ArrowLeft"){
+                document.getElementById("left").style.backgroundColor = "white";
+                console.log("rashi")
+            }else if(e.key=="ArrowRight"){
+                document.getElementById("right").style.backgroundColor = "white";
+                console.log("rashi")
+            }
+        }
+    </script>
 </body>
 </html>

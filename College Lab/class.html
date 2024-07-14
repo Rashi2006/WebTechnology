@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>classInJavaScript</title>
+</head>
+<body>
+    <script>
+        class SmartGirl{
+            name ;
+            age;
+            
+            constructor(name, age){
+                this.name = name;
+                this.age = age;
+            }
+            display(){
+                console.log("Name: " + this.name);
+                console.log("Age: " + this.age);
+            }
+        }
+        let girl1 = new SmartGirl("Rashi", 18);
+        girl1.display();
+    </script>
+</body>
+</html>
