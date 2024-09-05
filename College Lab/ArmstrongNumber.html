@@ -1,26 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ArmstrongNumber</title>
 </head>
+
 <body>
     <script>
-        n=parseInt(prompt("Enter the number:"));
-        let number=n;
-        let r=0;
-        let num=0;
-        while(n!=0){
-           r=n%10;
-           num+=Math.pow(r,3);
-           n=parseInt(n/10);
+        n = parseInt(prompt("Enter the number:"));
+        let number = n;
+        let r = 0;
+        let num = 0;
+        while (n != 0) {
+            r = n % 10;
+            num += Math.pow(r, 3);
+            n = parseInt(n / 10);
         }
-        if(number==num){
+
+        if (number == num) {
             alert("Armstrong Number");
-        }else{
+        } else {
             alert("Not an Armstrong Number");
         }
     </script>
 </body>
+
 </html>
