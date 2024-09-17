@@ -1,25 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ChnageHTML</title>
 </head>
+
 <body>
     <input type="text" id="pw" placeholder="Enter password">
-   <button onclick="check()">EYE</button>
-    <script>  
-  
-        function check(){
-           let input=document.getElementById("pw");
-            if(input.type=='text'){
-            input.type='password';
-           
-        }else if(input.type=='password'){
-            input.type='text';
+    <button onclick="check()">EYE</button>
+    <script>
+
+        function check() {
+            let input = document.getElementById("pw");
+            if (input.type == 'text') {
+                input.type = 'password';
+
+            } else if (input.type == 'password') {
+                input.type = 'text';
+            }
         }
-    }
-       
+
     </script>
 </body>
+
 </html>
